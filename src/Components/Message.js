@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-const Message = ({username, text}) => {
+const Message = (props) => {
     return( 
     <div className="message">
-      <div className="name">{username}</div>
-      <div className="text">{text}</div>
+      <div className="name">{props.username}</div>
+      <div className="text">{props.text}</div>
     </div>
    )
 
