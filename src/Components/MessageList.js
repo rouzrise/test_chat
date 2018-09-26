@@ -28,7 +28,7 @@ class MessageList extends Component {
   render() {
     return (
       <div className="message-list">
-      {fakeData.map((message) => {
+      {this.props.messages.map((message) => {
           return (
               <div key={message.id}>
                    <div>{message.senderId}</div>
