@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import Username from './Components/Username';
+import MessageList from './Components/MessageList';
 import './App.css';
 
+
 class App extends Component {
+
   render() {
     return (
-     <Username onSubmit={username => alert(username)} />
+     <MessageList/>
     );
   }
 }
