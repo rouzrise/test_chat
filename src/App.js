@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import MessageList from "./Components/MessageList";
 import SendMessageForm from "./Components/SendMessageForm";
+import SignIn from "./Components/SignIn";
+import { Route, Switch } from "react-router-dom";
 import Chatkit from "@pusher/chatkit";
 import "./App.css";
 import { instanceLocator, tokenUrl } from "./config";
@@ -12,7 +14,8 @@ class App extends Component {
   }
 
   state = {
-    messages: []
+    messages: [],
+    name: ''
   };
   componentDidMount() {
     const chatManager = new Chatkit.ChatManager({
@@ -40,7 +43,6 @@ class App extends Component {
     });
   }
 
-
   //sending to chatkit - should change to sending to localstorage!!!
   sendMessage(text) {
     this.currentUser.sendMessage({
@@ -50,9 +52,21 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <MessageList messages={this.state.messages} />
-        <SendMessageForm sendMessage={this.sendMessage}/>
+      <div className="app">
+        <Switch>
+          <Route exact path="/" render={() => <SignIn />} />
+
+          <Route
+            exact
+            path="/chat"
+            render={() => (
+              <div>
+                <MessageList messages={this.state.messages} />
+                <SendMessageForm sendMessage={this.sendMessage} />
+              </div>
+            )}
+          />
+        </Switch>
       </div>
     );
   }
