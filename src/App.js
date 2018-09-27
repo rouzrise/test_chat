@@ -6,6 +6,11 @@ import "./App.css";
 import { instanceLocator, tokenUrl } from "./config";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.sendMessage = this.sendMessage.bind(this);
+  }
+
   state = {
     messages: []
   };
@@ -19,7 +24,8 @@ class App extends Component {
     });
 
     chatManager.connect().then(currentUser => {
-      currentUser.subscribeToRoom({
+      this.currentUser = currentUser;
+      this.currentUser.subscribeToRoom({
         roomId: 17176885,
         messageLimit: 20,
         hooks: {
@@ -33,13 +39,22 @@ class App extends Component {
       });
     });
   }
+
+
+  //sending to chatkit - should change to sending to localstorage!!!
+  sendMessage(text) {
+    this.currentUser.sendMessage({
+      text: text,
+      roomId: 17176885
+    });
+  }
   render() {
     return (
       <div>
-    <MessageList messages={this.state.messages} />
-    <SendMessageForm />
-    </div>
-    )
+        <MessageList messages={this.state.messages} />
+        <SendMessageForm sendMessage={this.sendMessage}/>
+      </div>
+    );
   }
 }
 

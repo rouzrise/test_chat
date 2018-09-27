@@ -22,8 +22,11 @@ this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(e) {
-        e.preventDefault();
-        console.log(this.state.message);
+        e.preventDefault()
+        this.props.sendMessage(this.state.message)
+        this.setState({
+            message: ''
+        })
     }
 
   render() {
