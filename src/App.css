@@ -1,6 +1,190 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Karla';
+  src: url('./fonts/karla-regular-webfont.woff2') format('woff2'),
+       url('./fonts/karla-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: 'Karla';
+  src: url('./fonts/karla-italic-webfont.woff2') format('woff2'),
+       url('./fonts/karla-italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Karla';
+  src: url('./fonts/karla-bold-webfont.woff2') format('woff2'),
+       url('./fonts/karla-bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Karla';
+  src: url('./fonts/karla-bolditalic-webfont.woff2') format('woff2'),
+       url('./fonts/karla-bolditalic-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* сброс стилей браузера */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  line-height: 1.2;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+} 
+/* конец кода сброса стилей браузера */
+
+body {
+  font-family: 'Karla';
+  background-color: #ccc;
+}
+
+
+.chatName {
+  position: fixed;
+  font-weight: bold;
+  font-size: 100px;
+  color:#fff;
+  letter-spacing: -5px;
+  padding-top: 63px;
+  margin-left:-6px;
+}
+
+.app {
+  margin: 0 auto;
+  background-color:#00a0ff;
+  width: 375px;
+  height: 667px;
+  z-index:-2;
+}
+
+.sign-in {
+  position: relative;
+  width: 325px;
+  height: 270px;
+  background-color: #fff;
+  margin: 0 auto;
+  top:-340px;
+  z-index: 2;
+}
+.messagesSign{
+  z-index: 1000;
+}
+fieldset {
+  padding: 32px 40px;
+}
+
+label {
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #ad807d;
+  margin-bottom: -5px;
+  padding: 0;
+  letter-spacing: 2px;
+  font-weight: bold;
+
+}
+input[type=text] {
+  font-size: 14px;
+  color: #000;
+  width: 100%;
+  padding: 12px 0;
+  margin-bottom: 24px;
+  display: block;
+  /* box-sizing: border-box; */
+  border: none;
+  border-bottom: solid 1px rgba(0, 0, 0, .2);
+}
+
+button {
+
+  border: none;
+  font-size: 13px;
+  font-weight: bold;
+  color: #fff;
+  display: inline;
+
+}
+.right {
+  position: relative;
+  left: 164px;
+  top: 30px;
+z-index:1000;
+background-color: #00a0ff;
+}
+
+.blueStrip {
+  position: absolute;
+  width: 325px;
+  height: 60px;
+  background-color: #00a0ff;
+  top:210px;
+  left: 0px;
+}
+
+.blackBg {
+  background-color:#000;
+  width: 375px;
+  height: 290px;
+  position: relative;
+  top:-564px;
+  z-index: 1;
+
+}
+
+.footerText {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  margin-top: -610px;
+  z-index: 1000;
+  font-size: 11px;
+}
+
+.linkToSignUp {
+  text-decoration: none;
+  border-bottom: 1px #fff solid;
+  padding: 5px 0;
+}
+
+.linkToSignUp:visited {
+  color: #fff;
+}
+
+/* input[type=submit] {
+  width: 100%;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  display: inline;
+}
+
+input[type=submit]:hover {
+  background-color: black;
+} */
+
 
 
 .text {
@@ -9,5 +193,5 @@
   display: inline-block;
   padding: 10px;
   border-radius: 10px;
-  
+
 }
