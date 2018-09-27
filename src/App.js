@@ -90,7 +90,7 @@ class App extends Component {
             render={() => (
               <div>
                 <header>
-                  <span class="headingChat">Testovoe zadanie</span>
+                  <span className="headingChat">Testovoe zadanie</span>
                 </header>
                 <MessageList messages={this.state.messages} />
                 <SendMessageForm sendMessage={this.sendMessage} />

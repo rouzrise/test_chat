@@ -248,3 +248,12 @@ line-height: 23px;
   width:375px;
 }
 
+.btn {
+  position: fixed;
+bottom: 0;
+margin-bottom: 120px;
+right: 420px;
+  z-index: 1000;
+  background: none;
+}
+
