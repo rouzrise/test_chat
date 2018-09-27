@@ -11,6 +11,8 @@ class App extends Component {
   constructor() {
     super();
     this.sendMessage = this.sendMessage.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   state = {
@@ -50,11 +52,36 @@ class App extends Component {
       roomId: 17176885
     });
   }
+
+  handleChange(e) {
+    this.setState({
+      name: e.target.value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    alert(this.state.name);
+    localStorage.setItem('name', this.state.name);
+    window.location.href = "http://localhost:3000/chat";
+    
+  }
+
   render() {
     return (
       <div className="app">
         <Switch>
-          <Route exact path="/" render={() => <SignIn />} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <SignIn
+                handleSubmit={this.handleSubmit}
+                handleChange={this.handleChange}
+                name={this.state.name}
+              />
+            )}
+          />
 
           <Route
             exact
