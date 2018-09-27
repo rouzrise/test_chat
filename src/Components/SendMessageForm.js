@@ -32,9 +32,13 @@ this.handleSubmit = this.handleSubmit.bind(this)
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="send-message-form">
-    <input
+        <div id="inputContainer">
+        <input
     onChange={this.handleChange}
-    placeholder="Type message..." value={this.state.message} type="text" />
+    placeholder="Type message..." value={this.state.message} type="text" id="sendField" />
+
+        <button class="btn" id="broadcast">send</button>
+    </div>
       </form>
     );
   }

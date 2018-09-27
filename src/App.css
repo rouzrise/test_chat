@@ -185,13 +185,66 @@ input[type=submit]:hover {
   background-color: black;
 } */
 
+/* //////MENU */
+header{
 
+
+  position: fixed;
+  top: 0px;
+  /* left: 0px;
+  right: 0px; */
+  width: 375px;
+  height: 64px;
+  background: #000;
+  z-index: 100;
+
+  box-sizing: border-box;
+  color: white;
+  font-size: 17px;
+  padding: 34px 16px 14px;
+  text-align: center;
+}
+
+.message-list {
+  padding-top: 144px;
+  height: 85%;
+  overflow: auto;
+}
+
+.message {
+padding: 25px;
+margin:14px 14px 14px 0;
+background-color: #fff;
+color: #000;
+font-size: 15px;
+box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+width: fit-content;
+}
 
 .text {
-  background: red;
-  color: white;
-  display: inline-block;
-  padding: 10px;
-  border-radius: 10px;
-
+  color: #000;
+  font-size: 15px;
+line-height: 23px;
+  padding: 24px 25px;
 }
+
+#inputContainer {
+  position: fixed;
+  background-color: #000;
+  bottom: 0;
+  margin-bottom: 88px;
+  width:375px;
+}
+
+#sendField {
+  position: fixed;
+  box-sizing: border-box;
+  background-color: #000;
+  bottom: 0;
+  color: #fff;
+  margin-bottom: 88px;
+  font-size: 15px;
+  padding: 24px 65px 20px;
+  width:375px;
+}
+

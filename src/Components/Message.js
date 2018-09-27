@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-
-const Message = (props) => {
-    return( 
+import placeholder from "./../vectors/placeholder.jpg";
+const Message = props => {
+  return (
     <div className="message">
-      <div className="name">{props.username}</div>
       <div className="text">{props.text}</div>
     </div>
-   )
-
-}
+  );
+};
 
 export default Message;
-

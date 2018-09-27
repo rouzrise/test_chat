@@ -6,6 +6,8 @@ import { Route, Switch } from "react-router-dom";
 import Chatkit from "@pusher/chatkit";
 import "./App.css";
 import { instanceLocator, tokenUrl } from "./config";
+import buttonSend from "./vectors/buttonSend.svg";
+
 
 class App extends Component {
   constructor() {
@@ -17,7 +19,7 @@ class App extends Component {
 
   state = {
     messages: [],
-    name: ''
+    name: ""
   };
   componentDidMount() {
     const chatManager = new Chatkit.ChatManager({
@@ -62,9 +64,8 @@ class App extends Component {
   handleSubmit(e) {
     e.preventDefault();
     alert(this.state.name);
-    localStorage.setItem('name', this.state.name);
+    localStorage.setItem("name", this.state.name);
     window.location.href = "http://localhost:3000/chat";
-    
   }
 
   render() {
@@ -88,6 +89,9 @@ class App extends Component {
             path="/chat"
             render={() => (
               <div>
+                <header>
+                  <span class="headingChat">Testovoe zadanie</span>
+                </header>
                 <MessageList messages={this.state.messages} />
                 <SendMessageForm sendMessage={this.sendMessage} />
               </div>
