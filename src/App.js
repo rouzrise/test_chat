@@ -21,38 +21,47 @@ class App extends Component {
     messages: [],
     name: ""
   };
-  componentDidMount() {
-    const chatManager = new Chatkit.ChatManager({
-      instanceLocator: instanceLocator,
-      userId: "Ann",
-      tokenProvider: new Chatkit.TokenProvider({
-        url: tokenUrl
-      })
-    });
 
-    chatManager.connect().then(currentUser => {
-      this.currentUser = currentUser;
-      this.currentUser.subscribeToRoom({
-        roomId: 17176885,
-        messageLimit: 20,
-        hooks: {
-          onNewMessage: message => {
-            console.log("message text: ", message.text);
-            this.setState({
-              messages: [...this.state.messages, message]
-            });
-          }
-        }
-      });
-    });
-  }
+  // componentDidMount() {
+  //   const chatManager = new Chatkit.ChatManager({
+  //     instanceLocator: instanceLocator,
+  //     userId: "Ann",
+  //     tokenProvider: new Chatkit.TokenProvider({
+  //       url: tokenUrl
+  //     })
+  //   });
+
+  //   chatManager.connect().then(currentUser => {
+  //     this.currentUser = currentUser;
+  //     this.currentUser.subscribeToRoom({
+  //       roomId: 17176885,
+  //       messageLimit: 20,
+  //       hooks: {
+  //         onNewMessage: message => {
+  //           console.log("message text: ", message.text);
+  //           this.setState({
+  //             messages: [...this.state.messages, message]
+  //           });
+  //         }
+  //       }
+  //     });
+  //   });
+  // }
 
   //sending to chatkit - should change to sending to localstorage!!!
+  // sendMessage(text) {
+  //   this.currentUser.sendMessage({
+  //     text: text,
+  //     roomId: 17176885
+  //   });
+  // }
   sendMessage(text) {
-    this.currentUser.sendMessage({
-      text: text,
-      roomId: 17176885
-    });
+    const array = this.state.messages
+    console.log(text)
+    this.setState({
+      messages: [...array, text]
+    })
+    console.log(this.state.messages)
   }
 
   handleChange(e) {
@@ -93,7 +102,7 @@ class App extends Component {
                   <span className="headingChat">Testovoe zadanie</span>
                 </header>
                 <MessageList messages={this.state.messages} />
-                <SendMessageForm sendMessage={this.sendMessage} />
+                <SendMessageForm sendMessage={this.sendMessage} name={this.state.nane} />
               </div>
             )}
           />

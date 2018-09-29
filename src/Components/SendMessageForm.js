@@ -18,8 +18,6 @@ class SendMessageForm extends Component {
     this.setState({
       message: e.target.value
     });
-
-    console.log(this);
   }
 
   handleSubmit(e) {
