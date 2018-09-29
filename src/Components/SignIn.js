@@ -2,29 +2,7 @@ import React, { Component } from "react";
 import msgs from "./../vectors/msgs.svg";
 
 class SignIn extends Component {
-  // state = {
-  //   name: ""
-  // };
 
-  //   constructor() {
-  //     super();
-  //     this.handleChange = this.handleChange.bind(this);
-  //     this.handleSubmit = this.handleSubmit.bind(this);
-  //   }
-
-  //   handleChange(e) {
-  //     this.setState({
-  //       name: e.target.value
-  //     });
-
-  //     console.log(this);
-  //   }
-
-  //   handleSubmit(e) {
-  //     e.preventDefault();
-  //     alert(this.props.name)
-  //     window.location.href = "http://localhost:3000/chat"
-  //   }
 
   render() {
     return (

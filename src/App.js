@@ -1,37 +1,20 @@
 import React, { Component } from "react";
-import MessageList from "./Components/MessageList";
-import SendMessageForm from "./Components/SendMessageForm";
+import Messages from "./Components/Messages";
 import SignIn from "./Components/SignIn";
 import { Route, Switch } from "react-router-dom";
-import Chatkit from "@pusher/chatkit";
 import "./App.css";
-import { instanceLocator, tokenUrl } from "./config";
-import buttonSend from "./vectors/buttonSend.svg";
-
 
 class App extends Component {
   constructor() {
     super();
-    this.sendMessage = this.sendMessage.bind(this);
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   state = {
-    messages: [],
     name: ""
   };
-
-  sendMessage(text) {
-    const array = this.state.messages
-    const name = localStorage.getItem("name")
- 
-    this.setState({
-      name: name,
-      messages: [...array, text]
-    })
-    console.log(this.state.messages)
-  }
 
   handleChange(e) {
     this.setState({
@@ -70,7 +53,7 @@ class App extends Component {
                 <header>
                   <span className="headingChat">Testovoe zadanie</span>
                 </header>
-                <Messages />
+                <Messages name={this.state.name}/>
                 {/* <MessageList messages={this.state.messages} name={this.state.name}/>
                 <SendMessageForm sendMessage={this.sendMessage} /> */}
               </div>
