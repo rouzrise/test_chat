@@ -57,8 +57,10 @@ class App extends Component {
   // }
   sendMessage(text) {
     const array = this.state.messages
-    console.log(text)
+    const name = localStorage.getItem("name")
+ 
     this.setState({
+      name: name,
       messages: [...array, text]
     })
     console.log(this.state.messages)
@@ -101,8 +103,8 @@ class App extends Component {
                 <header>
                   <span className="headingChat">Testovoe zadanie</span>
                 </header>
-                <MessageList messages={this.state.messages} />
-                <SendMessageForm sendMessage={this.sendMessage} name={this.state.nane} />
+                <MessageList messages={this.state.messages} name={this.state.name}/>
+                <SendMessageForm sendMessage={this.sendMessage} />
               </div>
             )}
           />

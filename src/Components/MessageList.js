@@ -8,7 +8,7 @@ class MessageList extends Component {
       <div className="message-list">
       {this.props.messages.map(message => {
         return (
-          <Message text={message}/>
+          <Message text={message} name={this.props.name}/>
         )
       })}
     

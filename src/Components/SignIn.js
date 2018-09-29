@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import msgs from "./../vectors/msgs.svg";
 
 class SignIn extends Component {
-  state = {
-    name: ""
-  };
+  // state = {
+  //   name: ""
+  // };
 
   //   constructor() {
   //     super();
