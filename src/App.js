@@ -22,39 +22,6 @@ class App extends Component {
     name: ""
   };
 
-  // componentDidMount() {
-  //   const chatManager = new Chatkit.ChatManager({
-  //     instanceLocator: instanceLocator,
-  //     userId: "Ann",
-  //     tokenProvider: new Chatkit.TokenProvider({
-  //       url: tokenUrl
-  //     })
-  //   });
-
-  //   chatManager.connect().then(currentUser => {
-  //     this.currentUser = currentUser;
-  //     this.currentUser.subscribeToRoom({
-  //       roomId: 17176885,
-  //       messageLimit: 20,
-  //       hooks: {
-  //         onNewMessage: message => {
-  //           console.log("message text: ", message.text);
-  //           this.setState({
-  //             messages: [...this.state.messages, message]
-  //           });
-  //         }
-  //       }
-  //     });
-  //   });
-  // }
-
-  //sending to chatkit - should change to sending to localstorage!!!
-  // sendMessage(text) {
-  //   this.currentUser.sendMessage({
-  //     text: text,
-  //     roomId: 17176885
-  //   });
-  // }
   sendMessage(text) {
     const array = this.state.messages
     const name = localStorage.getItem("name")
@@ -103,8 +70,9 @@ class App extends Component {
                 <header>
                   <span className="headingChat">Testovoe zadanie</span>
                 </header>
-                <MessageList messages={this.state.messages} name={this.state.name}/>
-                <SendMessageForm sendMessage={this.sendMessage} />
+                <Messages />
+                {/* <MessageList messages={this.state.messages} name={this.state.name}/>
+                <SendMessageForm sendMessage={this.sendMessage} /> */}
               </div>
             )}
           />

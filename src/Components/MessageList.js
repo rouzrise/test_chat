@@ -3,16 +3,29 @@ import Message from './Message';
 import uuid from "uuid";
 
 class MessageList extends Component {
+
+  renderMessages() {
+    const messages = this.props.messages
+
+    return messages.map( message => {
+      return (
+        <div className="message">
+        <div className="text">{message}</div>
+        <div className="name">{props.name}</div>
+      </div>
+      )
+    }
+  }
+
   render() {
     return (
       <div className="message-list">
-      {this.props.messages.map(message => {
+      {this.renderMessages}
+      {/* {this.props.messages.map(message => {
         return (
           <Message text={message} name={this.props.name}/>
         )
-      })}
-    
-          {/* <Message text={this.props.messages[0]}/> */}
+      })} */}
       </div>
     );
   }
