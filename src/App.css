@@ -1,3 +1,7 @@
+:root {
+  --main-bg-color: #00a0ff;
+}
+
 /* importing fonts */
 @font-face {
   font-family: "Karla";
@@ -154,7 +158,7 @@ body {
   width: 375px;
   height: 600px;
   z-index: -2;
-  background-color: #00a0ff;
+  background-color: var(--main-bg-color);
 }
 
 /* SIGN IN PAGE */
@@ -225,14 +229,14 @@ button {
   left: 164px;
   top: 30px;
   z-index: 1000;
-  background-color: #00a0ff;
+  background-color: var(--main-bg-color);
 }
 
 .blueStrip {
   position: absolute;
   width: 325px;
   height: 60px;
-  background-color: #00a0ff;
+  background-color: var(--main-bg-color);
   top: 210px;
   left: 0px;
 }
@@ -284,7 +288,7 @@ header {
 .chatArea {
   margin-top: 64px;
   height: 540px;
-  background-color: #00a0ff;
+  background-color: var(--main-bg-color);
   overflow: auto;
 }
 
