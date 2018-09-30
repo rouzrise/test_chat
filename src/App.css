@@ -143,7 +143,6 @@ table {
 body {
   font-family: "Karla";
   background-color: #ccc;
-  position: relative;
   display: flex;
   justify-content: center; 
   align-items: center; 
@@ -157,8 +156,12 @@ body {
   background-color: #00a0ff;
 }
 
+.signInPage{
+  position: relative;
+}
+
 .chatName {
-  position: fixed;
+  position: absolute;
   font-weight: bold;
   font-size: 100px;
   color: #fff;

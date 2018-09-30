@@ -6,7 +6,7 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div>
+      <div className="signInPage">
         <h1 className="chatName">Chat</h1>
         <img src={msgs} className="messagesSign" alt="messages sign" />
         <form onSubmit={this.props.handleSubmit} className="sign-in">
