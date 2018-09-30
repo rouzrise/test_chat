@@ -47,17 +47,21 @@ class Messages extends Component {
     let message = {};
     let messages = [];
     let h = new Date();
-    let time = `${h.getHours()}-${h.getMinutes()}`;
+    let time = `${h.getHours()}:${h.getMinutes()}`;
 
     if (text.trim() === "") {
       return;
     }
-    message.name = localStorage.getItem("name");
-    message.text = text;
+
+
+    message.name = localStorage.getItem("name")
+    message.text = text
     message.time = time
-    const array = this.state.messages;
-    messages = [...array, message];
-    console.log(messages);
+
+    message.class = this.state.position
+    const array = this.state.messages
+    messages = [...array, message]
+    console.log(messages)
     this.setState({
       messages: messages
     });
@@ -77,8 +81,8 @@ class Messages extends Component {
         return (
           <div className="message">
             <div className="text">{message.text}</div>
-            <div className="name">{message.name}</div>
-            <div className="time">{message.time}</div>
+            <div><span className="time">{message.time}</span>  <span className="name">{message.name}</span></div>
+          
           </div>
         );
       });
@@ -88,6 +92,7 @@ class Messages extends Component {
   render() {
     return (
       <div>
+        <div className="dayTime">Today at {new Date().getHours()}:{new Date().getMinutes()}</div>
         <div className="message-list">{this.renderMessages()}</div>
         <form onSubmit={this.handleSubmit} className="send-message-form">
           <div id="inputContainer">

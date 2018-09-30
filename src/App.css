@@ -195,8 +195,6 @@ header{
 
   position: fixed;
   top: 0px;
-  /* left: 0px;
-  right: 0px; */
   width: 375px;
   height: 64px;
   background: #000;
@@ -209,15 +207,24 @@ header{
   text-align: center;
 }
 
+.dayTime {
+  padding: 100px 0 22px;
+  text-align: center;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+}
+
 .message-list {
-  padding-top: 144px;
+  padding: 0 25px;
   height: 85%;
   overflow: auto;
 }
 
 .message {
-padding: 25px;
-margin:14px 14px 14px 0;
+padding: 24px;
+margin:14px 25px 25px 0;
 background-color: #fff;
 color: #000;
 font-size: 15px;
@@ -228,10 +235,21 @@ width: fit-content;
 .text {
   color: #000;
   font-size: 15px;
-line-height: 23px;
-  padding: 24px 25px;
+  line-height: 23px;
+  /* padding: 24px 25px; */
+}
+.time {
+  color: #ad807d;
+  font-weight: bold;
+  font-size: 10px;
 }
 
+.name{
+  color: #ad807d;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: capitalize;
+}
 #inputContainer {
   position: fixed;
   background-color: #000;
