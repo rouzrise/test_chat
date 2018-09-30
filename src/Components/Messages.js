@@ -14,7 +14,7 @@ class Messages extends Component {
   state = {
     message: "",
     messages: [],
-    //not used now - is created for later differentiation of msgs sent by user and his interlocutor
+    //TO BE DONE - not used now - is created for later differentiation of msgs sent by user and his interlocutor - it should be changed by function (create later) that changes state to '' if message is sent by users interlocuter, not user himself to be reflected on another side of screen
     alignMessages: "float-right"
   };
 

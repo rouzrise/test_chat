@@ -1,3 +1,4 @@
+/* importing fonts */
 @font-face {
   font-family: "Karla";
   src: url("./fonts/karla-regular-webfont.woff2") format("woff2"),
@@ -30,7 +31,7 @@
   font-style: italic;
 }
 
-/* сброс стилей браузера */
+/* normalize css */
 html,
 body,
 div,
@@ -138,7 +139,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* конец кода сброса стилей браузера */
+/* finish normalize css */
 
 body {
   font-family: "Karla";
@@ -156,6 +157,7 @@ body {
   background-color: #00a0ff;
 }
 
+/* SIGN IN PAGE */
 .signInPage {
   position: relative;
 }
@@ -186,6 +188,7 @@ body {
 .messagesSign {
   z-index: 1000;
 }
+
 fieldset {
   padding: 32px 40px;
 }
@@ -206,7 +209,6 @@ input[type="text"] {
   padding: 12px 0;
   margin-bottom: 24px;
   display: block;
-  /* box-sizing: border-box; */
   border: none;
   border-bottom: solid 1px rgba(0, 0, 0, 0.2);
 }
@@ -263,7 +265,7 @@ button {
   color: #fff;
 }
 
-/* //////MENU */
+/* MESSAGES (CHAT) PAGE */
 header {
   position: absolute;
   top: 0px;
