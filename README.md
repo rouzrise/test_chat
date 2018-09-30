@@ -12,7 +12,7 @@ Layout is not responsive but all the proportions are kept according to provided 
 
 ### 1.Development Mode:
 
-To start using App `git clone` or download it from [github](https://github.com/rouzrise/test_chat).
+To start using App `git clone` or download it from [github](https://github.com/rouzrise/testChatApp).
 
 After cloning or downloading the App - `cd` to the folder in Terminal.
 Be sure you have React installed locally and globally.
@@ -21,7 +21,7 @@ After that run `npm start` to open the Browser tab with working App.
 
 ### 2.Production mode:
 
-You can see the App deployed on Gihub pages: https://rouzrise.github.io/test_chat        
+You can see the App deployed on Gihub pages: https://rouzrise.github.io/testChatApp        
 
 ## App capabilities
 
