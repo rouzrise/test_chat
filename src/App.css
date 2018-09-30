@@ -1,81 +1,166 @@
 @font-face {
-  font-family: 'Karla';
-  src: url('./fonts/karla-regular-webfont.woff2') format('woff2'),
-       url('./fonts/karla-regular-webfont.woff') format('woff');
+  font-family: "Karla";
+  src: url("./fonts/karla-regular-webfont.woff2") format("woff2"),
+    url("./fonts/karla-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Karla';
-  src: url('./fonts/karla-italic-webfont.woff2') format('woff2'),
-       url('./fonts/karla-italic-webfont.woff') format('woff');
+  font-family: "Karla";
+  src: url("./fonts/karla-italic-webfont.woff2") format("woff2"),
+    url("./fonts/karla-italic-webfont.woff") format("woff");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Karla';
-  src: url('./fonts/karla-bold-webfont.woff2') format('woff2'),
-       url('./fonts/karla-bold-webfont.woff') format('woff');
+  font-family: "Karla";
+  src: url("./fonts/karla-bold-webfont.woff2") format("woff2"),
+    url("./fonts/karla-bold-webfont.woff") format("woff");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Karla';
-  src: url('./fonts/karla-bolditalic-webfont.woff2') format('woff2'),
-       url('./fonts/karla-bolditalic-webfont.woff') format('woff');
+  font-family: "Karla";
+  src: url("./fonts/karla-bolditalic-webfont.woff2") format("woff2"),
+    url("./fonts/karla-bolditalic-webfont.woff") format("woff");
   font-weight: bold;
   font-style: italic;
 }
 
 /* сброс стилей браузера */
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
   vertical-align: baseline;
 }
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
   line-height: 1.2;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
-} 
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 /* конец кода сброса стилей браузера */
 
 body {
-  font-family: 'Karla';
+  font-family: "Karla";
   background-color: #ccc;
 }
-
 
 .chatName {
   position: fixed;
   font-weight: bold;
   font-size: 100px;
-  color:#fff;
+  color: #fff;
   letter-spacing: -5px;
   padding-top: 63px;
-  margin-left:-6px;
+  margin-left: -6px;
 }
 
 .app {
   margin: 0 auto;
   width: 375px;
   height: 600px;
-  z-index:-2;
-  background-color:#00a0ff;
+  z-index: -2;
+  background-color: #00a0ff;
 }
 
 .sign-in {
@@ -84,14 +169,14 @@ body {
   height: 270px;
   background-color: #fff;
   margin: 0 auto;
-  top:-340px;
+  top: -340px;
   z-index: 2;
 }
 
 .attention {
   color: #ff0000;
 }
-.messagesSign{
+.messagesSign {
   z-index: 1000;
 }
 fieldset {
@@ -106,9 +191,8 @@ label {
   padding: 0;
   letter-spacing: 2px;
   font-weight: bold;
-
 }
-input[type=text] {
+input[type="text"] {
   font-size: 14px;
   color: #000;
   width: 100%;
@@ -117,24 +201,22 @@ input[type=text] {
   display: block;
   /* box-sizing: border-box; */
   border: none;
-  border-bottom: solid 1px rgba(0, 0, 0, .2);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
 }
 
 button {
-
   border: none;
   font-size: 13px;
   font-weight: bold;
   color: #fff;
   display: inline;
-
 }
 .right {
   position: relative;
   left: 164px;
   top: 30px;
-z-index:1000;
-background-color: #00a0ff;
+  z-index: 1000;
+  background-color: #00a0ff;
 }
 
 .blueStrip {
@@ -142,18 +224,17 @@ background-color: #00a0ff;
   width: 325px;
   height: 60px;
   background-color: #00a0ff;
-  top:210px;
+  top: 210px;
   left: 0px;
 }
 
 .blackBg {
-  background-color:#000;
+  background-color: #000;
   width: 375px;
   height: 290px;
   position: relative;
-  top:-564px;
+  top: -564px;
   z-index: 1;
-
 }
 
 .footerText {
@@ -176,9 +257,7 @@ background-color: #00a0ff;
 }
 
 /* //////MENU */
-header{
-
-
+header {
   position: fixed;
   top: 0px;
   width: 375px;
@@ -196,7 +275,7 @@ header{
 .chatArea {
   margin-top: 64px;
   height: 540px;
-  background-color:#00a0ff;
+  background-color: #00a0ff;
   overflow: auto;
 }
 
@@ -214,13 +293,29 @@ header{
 }
 
 .message {
-padding: 24px;
-margin:14px 25px 25px 0;
-background-color: #fff;
-color: #000;
-font-size: 15px;
-box-shadow: 0 14px 28px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.10);
-width: fit-content;
+  padding: 24px;
+  margin: 14px 25px 25px 0;
+  background-color: #fff;
+  color: #000;
+  font-size: 15px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  max-width: 250px;
+}
+
+.float-right {
+  float: right;
+  margin: 13px 0;
+}
+
+.otherUserMessage {
+  float: right;
+}
+
+.clearfix {
+  display: table;
+  content: "";
+  clear: both;
 }
 
 .text {
@@ -235,7 +330,7 @@ width: fit-content;
   font-size: 10px;
 }
 
-.name{
+.name {
   color: #ad807d;
   font-weight: bold;
   font-size: 12px;
@@ -246,7 +341,7 @@ width: fit-content;
   background-color: #000;
   bottom: 0;
   margin-bottom: 88px;
-  width:375px;
+  width: 375px;
 }
 
 #sendField {
@@ -258,15 +353,14 @@ width: fit-content;
   margin-bottom: 88px;
   font-size: 15px;
   padding: 24px 65px 20px;
-  width:375px;
+  width: 375px;
 }
 
 .btn {
   position: fixed;
-bottom: 0;
-margin-bottom: 120px;
-right: 420px;
+  bottom: 0;
+  margin-bottom: 120px;
+  right: 420px;
   z-index: 1000;
   background: none;
 }
-

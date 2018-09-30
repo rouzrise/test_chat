@@ -4,7 +4,8 @@ import buttonSend from "./../vectors/buttonSend.png";
 class Messages extends Component {
   state = {
     message: "",
-    messages: []
+    messages: [],
+    alignMessages: 'float-right'
   };
 
   constructor() {
@@ -78,8 +79,9 @@ class Messages extends Component {
       const messages = JSON.parse(localStorage.getItem("messages"));
 
       return messages.map(message => {
+        const classNames = `${this.state.alignMessages} message clearfix`
         return (
-          <div className="message">
+          <div className={classNames}>
             <div className="text">{message.text}</div>
             <div><span className="time">{message.time}</span>  <span className="name">{message.name}</span></div>
           
@@ -91,7 +93,7 @@ class Messages extends Component {
 
   render() {
     return (
-      <div class="chatArea">
+      <div className="chatArea">
         <div className="dayTime">Today at {new Date().getHours()}:{new Date().getMinutes()}</div>
         <div className="message-list">{this.renderMessages()}</div>
         <form onSubmit={this.handleSubmit} className="send-message-form">
