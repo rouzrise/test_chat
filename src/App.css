@@ -350,7 +350,7 @@ header {
   background-color: #000;
   bottom: 0;
   color: #fff;
-  margin-bottom: 88px;
+  margin-bottom: 16px;
   font-size: 15px;
   padding: 24px 65px 20px;
   width: 375px;
@@ -359,8 +359,8 @@ header {
 .btn {
   position: fixed;
   bottom: 0;
-  margin-bottom: 120px;
-  right: 420px;
+  margin-bottom: 42px;
+  right: 472px;
   z-index: 1000;
   background: none;
 }
