@@ -11,12 +11,13 @@ class SignIn extends Component {
         <img src={msgs} className="messagesSign" alt="messages sign" />
         <form onSubmit={this.props.handleSubmit} className="sign-in">
           <fieldset>
-            <label>Username</label>
+            <label className={this.props.signInRef}>Username</label>
             <input
               onChange={this.props.handleChange}
               placeholder="Enter Your Name"
               value={this.props.name}
               type="text"
+              id="userName"
             />
             <label>Password</label>
             <input

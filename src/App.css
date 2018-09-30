@@ -87,6 +87,10 @@ body {
   top:-340px;
   z-index: 2;
 }
+
+.attention {
+  color: #ff0000;
+}
 .messagesSign{
   z-index: 1000;
 }

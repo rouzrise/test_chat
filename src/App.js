@@ -13,7 +13,8 @@ class App extends Component {
   }
 
   state = {
-    name: ""
+    name: "",
+    signInRef: "regular"
   };
 
   handleChange(e) {
@@ -24,9 +25,19 @@ class App extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    alert(this.state.name);
-    localStorage.setItem("name", this.state.name);
-    window.location.href = "http://localhost:3000/chat";
+    const name = this.state.name;
+    if (name.trim() === "") {
+      this.setState({
+        signInRef: "attention"
+      });
+      return;
+    } else {
+      this.setState({
+        signInRef: "regular"
+      });
+      localStorage.setItem("name", this.state.name);
+      window.location.href = "http://localhost:3000/chat";
+    }
   }
 
   render() {
@@ -41,6 +52,7 @@ class App extends Component {
                 handleSubmit={this.handleSubmit}
                 handleChange={this.handleChange}
                 name={this.state.name}
+                signInRef={this.state.signInRef}
               />
             )}
           />
@@ -53,7 +65,7 @@ class App extends Component {
                 <header>
                   <span className="headingChat">Testovoe zadanie</span>
                 </header>
-                <Messages name={this.state.name}/>
+                <Messages name={this.state.name} />
                 {/* <MessageList messages={this.state.messages} name={this.state.name}/>
                 <SendMessageForm sendMessage={this.sendMessage} /> */}
               </div>
