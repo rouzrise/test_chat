@@ -91,7 +91,7 @@ class Messages extends Component {
 
   render() {
     return (
-      <div>
+      <div class="chatArea">
         <div className="dayTime">Today at {new Date().getHours()}:{new Date().getMinutes()}</div>
         <div className="message-list">{this.renderMessages()}</div>
         <form onSubmit={this.handleSubmit} className="send-message-form">

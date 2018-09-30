@@ -72,10 +72,10 @@ body {
 
 .app {
   margin: 0 auto;
-  background-color:#00a0ff;
   width: 375px;
-  height: 667px;
+  height: 600px;
   z-index:-2;
+  background-color:#00a0ff;
 }
 
 .sign-in {
@@ -175,20 +175,6 @@ background-color: #00a0ff;
   color: #fff;
 }
 
-/* input[type=submit] {
-  width: 100%;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  display: inline;
-}
-
-input[type=submit]:hover {
-  background-color: black;
-} */
-
 /* //////MENU */
 header{
 
@@ -207,8 +193,15 @@ header{
   text-align: center;
 }
 
+.chatArea {
+  margin-top: 64px;
+  height: 540px;
+  background-color:#00a0ff;
+  overflow: auto;
+}
+
 .dayTime {
-  padding: 100px 0 22px;
+  padding: 32px 0 22px;
   text-align: center;
   font-size: 11px;
   text-transform: uppercase;
@@ -218,8 +211,6 @@ header{
 
 .message-list {
   padding: 0 25px;
-  height: 85%;
-  overflow: auto;
 }
 
 .message {
@@ -228,7 +219,7 @@ margin:14px 25px 25px 0;
 background-color: #fff;
 color: #000;
 font-size: 15px;
-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+box-shadow: 0 14px 28px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.10);
 width: fit-content;
 }
 
