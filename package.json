@@ -4,13 +4,10 @@
   "private": true,
   "homepage": "https://rouzrise.github.io/test_chat",
   "dependencies": {
-    "@pusher/chatkit": "^0.7.17",
-    "concurrently": "^4.0.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5",
-    "uuid": "^3.3.2"
+    "react-scripts": "1.1.5"
   },
   "scripts": {
     "predeploy": "npm run build",
