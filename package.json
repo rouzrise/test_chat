@@ -2,7 +2,7 @@
   "name": "test_chat",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://rouzrise.github.io/test_chat",
+  "homepage": "https://rouzrise.github.io/test_chat",
   "dependencies": {
     "@pusher/chatkit": "^0.7.17",
     "concurrently": "^4.0.1",
