@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import msgs from "./../vectors/msgs.svg";
 
 class SignIn extends Component {
-
-
   render() {
     return (
       <div className="signInPage">
         <h1 className="chatName">Chat</h1>
         <img src={msgs} className="messagesSign" alt="messages sign" />
+
+        {/* login form */}
         <form onSubmit={this.props.handleSubmit} className="sign-in">
           <fieldset>
             <label className={this.props.signInRef}>Username</label>
@@ -30,12 +30,11 @@ class SignIn extends Component {
             <button type="submit" className="right">
               Get Started
             </button>
-            <div className="blueStrip"></div>
-            {/* <input type="submit" value="Submit" /> */}
+            <div className="blueStrip" />
           </fieldset>
         </form>
 
-        <div className="blackBg"></div>
+        <div className="blackBg" />
 
         <div className="footerText">
           <span>Not registered? </span>

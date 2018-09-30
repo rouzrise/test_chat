@@ -17,15 +17,19 @@ class App extends Component {
     signInRef: "regular"
   };
 
+  //handles input of userName
   handleChange(e) {
     this.setState({
       name: e.target.value
     });
   }
 
+  //handles submitting of form wz username data
   handleSubmit(e) {
     e.preventDefault();
     const name = this.state.name;
+
+    //checks if there is an empty input of name - prevents
     if (name.trim() === "") {
       this.setState({
         signInRef: "attention"
@@ -35,7 +39,10 @@ class App extends Component {
       this.setState({
         signInRef: "regular"
       });
+      //keeps name input by user in local storage
       localStorage.setItem("name", this.state.name);
+    
+      //redirects browser to another page after user submits data
       window.location.href = "http://localhost:3000/chat";
     }
   }
@@ -43,6 +50,8 @@ class App extends Component {
   render() {
     return (
       <div className="app">
+      
+      {/* uses React Router for navigating */}
         <Switch>
           <Route
             exact

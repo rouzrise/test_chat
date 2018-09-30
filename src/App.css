@@ -144,8 +144,8 @@ body {
   font-family: "Karla";
   background-color: #ccc;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
 }
 
 .app {
@@ -156,7 +156,7 @@ body {
   background-color: #00a0ff;
 }
 
-.signInPage{
+.signInPage {
   position: relative;
 }
 
@@ -262,7 +262,6 @@ button {
 .linkToSignUp:visited {
   color: #fff;
 }
-
 
 /* //////MENU */
 header {
