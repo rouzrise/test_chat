@@ -143,6 +143,18 @@ table {
 body {
   font-family: "Karla";
   background-color: #ccc;
+  position: relative;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.app {
+  margin: 0 auto;
+  width: 375px;
+  height: 600px;
+  z-index: -2;
+  background-color: #00a0ff;
 }
 
 .chatName {
@@ -153,14 +165,6 @@ body {
   letter-spacing: -5px;
   padding-top: 63px;
   margin-left: -6px;
-}
-
-.app {
-  margin: 0 auto;
-  width: 375px;
-  height: 600px;
-  z-index: -2;
-  background-color: #00a0ff;
 }
 
 .sign-in {
@@ -256,9 +260,10 @@ button {
   color: #fff;
 }
 
+
 /* //////MENU */
 header {
-  position: fixed;
+  position: absolute;
   top: 0px;
   width: 375px;
   height: 64px;
@@ -277,6 +282,10 @@ header {
   height: 540px;
   background-color: #00a0ff;
   overflow: auto;
+}
+
+.messages {
+  position: relative;
 }
 
 .dayTime {
@@ -337,7 +346,6 @@ header {
   text-transform: capitalize;
 }
 #inputContainer {
-  position: fixed;
   background-color: #000;
   bottom: 0;
   margin-bottom: 88px;
@@ -345,22 +353,22 @@ header {
 }
 
 #sendField {
-  position: fixed;
+  position: absolute;
   box-sizing: border-box;
   background-color: #000;
   bottom: 0;
   color: #fff;
-  margin-bottom: 16px;
+  margin-bottom: -60px;
   font-size: 15px;
   padding: 24px 65px 20px;
   width: 375px;
 }
 
 .btn {
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  margin-bottom: 42px;
-  right: 472px;
+  margin-bottom: -33px;
+  right: 16px;
   z-index: 1000;
   background: none;
 }

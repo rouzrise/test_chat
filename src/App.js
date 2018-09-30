@@ -66,8 +66,6 @@ class App extends Component {
                   <span className="headingChat">Testovoe zadanie</span>
                 </header>
                 <Messages name={this.state.name} />
-                {/* <MessageList messages={this.state.messages} name={this.state.name}/>
-                <SendMessageForm sendMessage={this.sendMessage} /> */}
               </div>
             )}
           />

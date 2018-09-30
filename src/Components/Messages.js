@@ -84,7 +84,6 @@ class Messages extends Component {
           <div className={classNames}>
             <div className="text">{message.text}</div>
             <div><span className="time">{message.time}</span>  <span className="name">{message.name}</span></div>
-          
           </div>
         );
       });
@@ -93,9 +92,11 @@ class Messages extends Component {
 
   render() {
     return (
+      <div className="messages">
       <div className="chatArea">
         <div className="dayTime">Today at {new Date().getHours()}:{new Date().getMinutes()}</div>
         <div className="message-list">{this.renderMessages()}</div>
+        </div>
         <form onSubmit={this.handleSubmit} className="send-message-form">
           <div id="inputContainer">
             <input
