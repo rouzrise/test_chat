@@ -3,7 +3,7 @@ import buttonSend from "./../vectors/buttonSend.png";
 
 class Messages extends Component {
   state = {
-    message: '',
+    message: "",
     messages: []
   };
 
@@ -16,16 +16,18 @@ class Messages extends Component {
   }
 
   componentDidMount() {
-    if (this.state.messages===[] || localStorage.getItem('messages') === null) {
-       return
-      }
-        else {
-      let messages = JSON.parse(localStorage.getItem('messages'))
+    if (
+      this.state.messages === [] ||
+      localStorage.getItem("messages") === null
+    ) {
+      return;
+    } else {
+      let messages = JSON.parse(localStorage.getItem("messages"));
       this.setState({
-      messages: messages
-      })
+        messages: messages
+      });
     }
-}
+  }
 
   handleChange(e) {
     this.setState({
@@ -35,51 +37,53 @@ class Messages extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.sendMessage(this.state.message)
+    this.sendMessage(this.state.message);
     this.setState({
-      message: ''
+      message: ""
     });
   }
 
- 
-
   sendMessage(text) {
-    let message = {}
-    let messages = []
-    if (text.trim() === ''){
-      return
-    }
-    message.name = localStorage.getItem('name')
-    message.text = text
-     const array = this.state.messages
-     messages = [ ...array, message ]
-     console.log(messages)
-     this.setState({
-       messages: messages
-     })
- 
-    localStorage.setItem('messages', JSON.stringify(messages))
- 
-    this.renderMessages()
+    let message = {};
+    let messages = [];
+    let h = new Date();
+    let time = `${h.getHours()}-${h.getMinutes()}`;
 
+    if (text.trim() === "") {
+      return;
+    }
+    message.name = localStorage.getItem("name");
+    message.text = text;
+    message.time = time
+    const array = this.state.messages;
+    messages = [...array, message];
+    console.log(messages);
+    this.setState({
+      messages: messages
+    });
+
+    localStorage.setItem("messages", JSON.stringify(messages));
+
+    this.renderMessages();
   }
 
   renderMessages() {
-    if (localStorage.getItem('messages') === null) {
-        return
-      } else {
-    const messages = JSON.parse(localStorage.getItem('messages'))
+    if (localStorage.getItem("messages") === null) {
+      return;
+    } else {
+      const messages = JSON.parse(localStorage.getItem("messages"));
 
-    return messages.map(message => {
-      return (
-        <div className="message">
-          <div className="text">{message.text}</div>
-          <div className="name">{message.name}</div>
-        </div>
-      );
-    });
+      return messages.map(message => {
+        return (
+          <div className="message">
+            <div className="text">{message.text}</div>
+            <div className="name">{message.name}</div>
+            <div className="time">{message.time}</div>
+          </div>
+        );
+      });
+    }
   }
-}
 
   render() {
     return (
