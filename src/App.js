@@ -43,7 +43,7 @@ class App extends Component {
       localStorage.setItem("name", this.state.name);
     
       //redirects browser to another page after user submits data
-      window.location.href = "https://rouzrise.github.io/test_chat/chat";
+      window.location.href = "https://rouzrise.github.io/test_chat/#chat";
     }
   }
 
@@ -55,7 +55,7 @@ class App extends Component {
         <Switch>
           <Route
             exact
-            path="https://rouzrise.github.io/test_chat/"
+            path="https://rouzrise.github.io/test_chat/#/"
             render={() => (
               <SignIn
                 handleSubmit={this.handleSubmit}
@@ -68,7 +68,7 @@ class App extends Component {
 
           <Route
             exact
-            path="https://rouzrise.github.io/test_chat/chat"
+            path="https://rouzrise.github.io/test_chat/#chat/"
             render={() => (
               <div>
                 <header>
