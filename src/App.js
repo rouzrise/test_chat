@@ -55,7 +55,7 @@ class App extends Component {
         <Switch>
           <Route
             exact
-            path="https://rouzrise.github.io/test_chat/#/"
+            path="/"
             render={() => (
               <SignIn
                 handleSubmit={this.handleSubmit}
@@ -68,7 +68,7 @@ class App extends Component {
 
           <Route
             exact
-            path="https://rouzrise.github.io/test_chat/#chat/"
+            path="/#chat/"
             render={() => (
               <div>
                 <header>
