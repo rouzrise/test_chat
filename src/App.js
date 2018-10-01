@@ -68,7 +68,7 @@ class App extends Component {
 
           <Route
             exact
-            path="https://rouzrise.github.io/test_chat/#/chat"
+            path="/chat"
             render={() => (
               <div>
                 <header>
