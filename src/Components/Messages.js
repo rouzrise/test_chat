@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import buttonSend from "./../vectors/buttonSend.png";
 
 class Messages extends Component {
-
   constructor() {
     super();
     this.handleChange = this.handleChange.bind(this);
@@ -15,10 +14,11 @@ class Messages extends Component {
     message: "",
     messages: [],
     //TO BE DONE - not used now - is created for later differentiation of msgs sent by user and his interlocutor - it should be changed by function (create later) that changes state to '' if message is sent by users interlocuter, not user himself to be reflected on another side of screen
-    alignMessages: "float-right"
+    alignMessages: "float-right",
+    time: ""
   };
 
-//before mounting component
+  //before mounting component
   componentWillMount() {
     // checks if there are no previous messages kept
     if (
@@ -35,7 +35,7 @@ class Messages extends Component {
     }
   }
 
-  // handles input of messages 
+  // handles input of messages
   handleChange(e) {
     this.setState({
       message: e.target.value
@@ -53,13 +53,13 @@ class Messages extends Component {
     });
   }
 
-//handles sending messages
+  //handles sending messages
   sendMessage(text) {
     let message = {};
     let messages = [];
-    let h = new Date();
-    //keeps time of sending message 
-    let time = `${h.getHours()}:${h.getMinutes()}`;
+
+    //keeps time of sending message
+    let time = this.calculateTime();
 
     // prevents sending empty msgs
     if (text.trim() === "") {
@@ -84,6 +84,17 @@ class Messages extends Component {
 
     // invokes renderMessages function
     this.renderMessages();
+  }
+
+  //calculates time
+  calculateTime() {
+    let h = new Date();
+    let hours =
+      String(h.getHours()).length > 1 ? h.getHours() : `0${h.getHours()}`;
+    let minutes =
+      String(h.getMinutes()).length > 1 ? h.getMinutes() : `0${h.getMinutes()}`;
+    let time = `${hours}:${minutes}`;
+    return time;
   }
 
   // handles messages rendering
