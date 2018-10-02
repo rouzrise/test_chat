@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import buttonSend from "./../vectors/buttonSend.png";
+import React, { Component } from "react"
+import buttonSend from "./../vectors/buttonSend.png"
+import uuid from "uuid"
 
 class Messages extends Component {
   constructor() {
@@ -70,6 +71,7 @@ class Messages extends Component {
     message.name = localStorage.getItem("name");
     message.text = text;
     message.time = time;
+    message.key = uuid.v4();
 
     const array = this.state.messages;
     // adds new msg to array of previous msgs
@@ -97,6 +99,10 @@ class Messages extends Component {
     return time;
   }
 
+  showDate() {
+    
+  }
+
   // handles messages rendering
   renderMessages() {
     // checks if there are no msgs in local storage
@@ -109,7 +115,7 @@ class Messages extends Component {
       return messages.map(message => {
         const classNames = `${this.state.alignMessages} message clearfix`;
         return (
-          <div className={classNames}>
+          <div className={classNames} key={message.key}>
             <div className="text">{message.text}</div>
             <div>
               <span className="time">{message.time}</span>{" "}
