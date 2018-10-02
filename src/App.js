@@ -20,7 +20,8 @@ class App extends Component {
   //handles input of userName
   handleChange(e) {
     this.setState({
-      name: e.target.value
+      name: e.target.value,
+      signInRef: "regular"
     });
   }
 
