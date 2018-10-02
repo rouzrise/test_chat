@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import msgs from "./../vectors/msgs.svg";
 
 class SignIn extends Component {
@@ -48,3 +49,10 @@ class SignIn extends Component {
 }
 
 export default SignIn;
+
+SignIn.propTypes = {
+  handleSubmit: PropTypes.func,
+  signInRef: PropTypes.string,
+  handleChange: PropTypes.func,
+  name: PropTypes.string
+};
