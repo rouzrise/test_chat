@@ -318,6 +318,11 @@ header {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.1);
   width: fit-content;
   max-width: 250px;
+  /* wraps words */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  word-break: break-word;
 }
 
 .float-right {
