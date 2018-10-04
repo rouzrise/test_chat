@@ -121,9 +121,9 @@ class Messages extends Component {
         return (
           <div className={classNames} key={message.key}>
             <div className="text">{message.text}</div>
-            <div>
-              <span className="time">{message.time}</span>{" "}
-              <span className="name">{message.name}</span>
+            <div className='msgAttrs'>
+            <span className="name">{message.name}</span>{" "}
+            <span className="time">{message.time}</span>
             </div>
           </div>
         );

@@ -330,6 +330,10 @@ header {
   margin: 13px 0;
 }
 
+.msgAttrs {
+ float: right; 
+}
+
 .otherUserMessage {
   float: right;
 }
