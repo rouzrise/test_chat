@@ -133,7 +133,7 @@ class Messages extends Component {
 
   // handles scrolling of msgs
   scrollToBottom() {
-    this.endMsg.scrollIntoView({ behavior: "smooth" });
+    this.endMsg.scrollIntoView({ behavior: "instant" });
   }
 
   render() {
