@@ -1,6 +1,6 @@
-import React, { Component } from "react"
-import buttonSend from "./../vectors/buttonSend.png"
-import uuid from "uuid"
+import React, { Component } from "react";
+import buttonSend from "./../vectors/buttonSend.png";
+import uuid from "uuid";
 
 class Messages extends Component {
   constructor() {
@@ -9,6 +9,7 @@ class Messages extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
     this.renderMessages = this.renderMessages.bind(this);
+    this.scrollToBottom = this.scrollToBottom.bind(this);
   }
 
   state = {
@@ -20,7 +21,7 @@ class Messages extends Component {
   };
 
   //before mounting component
-  componentWillMount() {
+  componentDidMount() {
     // checks if there are no previous messages kept
     if (
       this.state.messages === [] ||
@@ -33,7 +34,14 @@ class Messages extends Component {
       this.setState({
         messages: messages
       });
+      // invokes function to scroll msgs - better to put in componentDidUpdate()
+      // this.scrollToBottom();
     }
+  }
+
+  //invokes function to scroll msgs; if putting into componentDidMount() - scrolling is not full ('last msg not scrolled')
+  componentDidUpdate() {
+    this.scrollToBottom();
   }
 
   // handles input of messages
@@ -99,10 +107,6 @@ class Messages extends Component {
     return time;
   }
 
-  showDate() {
-    
-  }
-
   // handles messages rendering
   renderMessages() {
     // checks if there are no msgs in local storage
@@ -127,6 +131,11 @@ class Messages extends Component {
     }
   }
 
+  // handles scrolling of msgs
+  scrollToBottom() {
+    this.endMsg.scrollIntoView({ behavior: "smooth" });
+  }
+
   render() {
     return (
       <div className="messages">
@@ -135,6 +144,12 @@ class Messages extends Component {
             Today at {new Date().getHours()}:{new Date().getMinutes()}
           </div>
           <div className="message-list">{this.renderMessages()}</div>
+          <div
+            style={{ float: "left", clear: "both" }} // elem to be point to scroll to bottom
+            ref={el => {
+              this.endMsg = el;
+            }}
+          />
         </div>
         <form onSubmit={this.handleSubmit} className="send-message-form">
           <div id="inputContainer">
