@@ -132,11 +132,11 @@ class Messages extends Component {
         ? `${date} ${month}`
         : message.dayMonth ===
           this.state.messages[this.state.messages.length - 1].dayMonth
-          ? ""
+          ? ''
           : `${date} ${month}`;
 
     //assigns class in case message and day are shown over msg
-    message.class = message.showDayMonth === "" ? "" : "dayMonth";
+    message.dateClasses = (message.showDayMonth !== "" && this.state.messages.length === 0) ? 'dayMonth firstdayMonth' : (message.showDayMonth !== "") ? 'dayMonth' : '';
 
     const array = this.state.messages;
     // adds new msg to array of previous msgs
@@ -177,7 +177,7 @@ class Messages extends Component {
         const classNames = `${this.state.alignMessages} message clearfix`;
         return (
           <div>
-            <div className={message.class}>{message.showDayMonth}</div>
+            <div className={message.dateClasses}>{message.showDayMonth}</div>
             <div className={classNames} key={message.key}>
               <div className="text">{message.text}</div>
               <div className="msgAttrs">
