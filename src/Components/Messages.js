@@ -66,6 +66,49 @@ class Messages extends Component {
   sendMessage(text) {
     let message = {};
     let messages = [];
+    let h = new Date();
+    let date = String(h.getDate()).length > 1 ? h.getDate() : `0${h.getDate()}`;
+    let monthNumber = h.getMonth();
+    let month;
+
+    //turns months from numbers into words:)
+    switch (monthNumber) {
+      case 0:
+        month = "January";
+        break;
+      case 1:
+        month = "February";
+        break;
+      case 2:
+        month = "March";
+        break;
+      case 3:
+        month = "April";
+        break;
+      case 4:
+        month = "May";
+        break;
+      case 5:
+        month = "June";
+        break;
+      case 6:
+        month = "July";
+        break;
+      case 7:
+        month = "August";
+        break;
+      case 8:
+        month = "September";
+        break;
+      case 9:
+        month = "October";
+        break;
+      case 10:
+        month = "November";
+        break;
+      case 11:
+        month = "December";
+    }
 
     //keeps time of sending message
     let time = this.calculateTime();
@@ -80,6 +123,20 @@ class Messages extends Component {
     message.text = text;
     message.time = time;
     message.key = uuid.v4();
+    // message.dayMonth = `${date} ${month} ${Date.now()}`; //test
+    message.dayMonth = `${date} ${month}`;
+
+    //assigns showDayMonth to existing day and month depending on if it's the first msg in row or if the neighbour messages were written in different days
+    message.showDayMonth =
+      this.state.messages.length === 0
+        ? `${date} ${month}`
+        : message.dayMonth ===
+          this.state.messages[this.state.messages.length - 1].dayMonth
+          ? ""
+          : `${date} ${month}`;
+
+    //assigns class in case message and day are shown over msg
+    message.class = message.showDayMonth === "" ? "" : "dayMonth";
 
     const array = this.state.messages;
     // adds new msg to array of previous msgs
@@ -119,11 +176,14 @@ class Messages extends Component {
       return messages.map(message => {
         const classNames = `${this.state.alignMessages} message clearfix`;
         return (
-          <div className={classNames} key={message.key}>
-            <div className="text">{message.text}</div>
-            <div className='msgAttrs'>
-            <span className="name">{message.name}</span>{" "}
-            <span className="time">{message.time}</span>
+          <div>
+            <div className={message.class}>{message.showDayMonth}</div>
+            <div className={classNames} key={message.key}>
+              <div className="text">{message.text}</div>
+              <div className="msgAttrs">
+                <span className="name">{message.name}</span>{" "}
+                <span className="time">{message.time}</span>
+              </div>
             </div>
           </div>
         );
@@ -140,9 +200,9 @@ class Messages extends Component {
     return (
       <div className="messages">
         <div className="chatArea">
-          <div className="dayTime">
+          {/* <div className="dayTime">
             Today at {new Date().getHours()}:{new Date().getMinutes()}
-          </div>
+          </div> */}
           <div className="message-list">{this.renderMessages()}</div>
           <div
             style={{ float: "left", clear: "both" }} // elem to be point to scroll to bottom
