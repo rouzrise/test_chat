@@ -217,6 +217,11 @@ input[type="text"] {
   border-bottom: solid 1px rgba(0, 0, 0, 0.2);
 }
 
+input[type="text"]:focus {
+  outline: none;
+  border-bottom: solid 2px var(--main-bg-color);
+}
+
 button {
   border: none;
   font-size: 13px;
