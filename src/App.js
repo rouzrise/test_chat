@@ -17,7 +17,7 @@ class App extends Component {
     signInRef: "regular",
     signInBorder: ""
   };
-
+  
   //handles input of userName
   handleChange(e) {
     this.setState({
@@ -38,6 +38,7 @@ class App extends Component {
         signInRef: "attention",
         signInBorder: "redBottom"
       });
+      document.getElementById('userName').focus();//sets focus to input field wz id="userName"
       return;
     } else {
       this.setState({

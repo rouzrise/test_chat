@@ -3,6 +3,11 @@ import PropTypes from "prop-types";
 import msgs from "./../vectors/msgs.svg";
 
 class SignIn extends Component {
+  componentDidMount() {
+    //sets focus to input field (with  id="userName") when component is rendered
+    this.nameInput.focus();
+  }
+
   render() {
     return (
       <div className="signInPage">
@@ -20,6 +25,7 @@ class SignIn extends Component {
               type="text"
               id="userName"
               className={this.props.signInBorder}
+              ref = {input => {this.nameInput = input;}}//is used to set focus in componentDidMount method
             />
             <label>Password</label>
             <input
@@ -54,6 +60,7 @@ export default SignIn;
 SignIn.propTypes = {
   handleSubmit: PropTypes.func,
   signInRef: PropTypes.string,
+  signInBorder: PropTypes.string,
   handleChange: PropTypes.func,
   name: PropTypes.string
 };

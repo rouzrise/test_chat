@@ -22,6 +22,8 @@ class Messages extends Component {
 
   //before mounting component
   componentDidMount() {
+
+
     // checks if there are no previous messages kept
     if (
       this.state.messages === [] ||
