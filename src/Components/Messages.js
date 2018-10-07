@@ -23,6 +23,8 @@ class Messages extends Component {
   //before mounting component
   componentDidMount() {
 
+    //sets focus to input field (with  id="userName") when component is rendered
+    this.nameInput.focus();
 
     // checks if there are no previous messages kept
     if (
@@ -226,6 +228,7 @@ class Messages extends Component {
               value={this.state.message}
               type="text"
               id="sendField"
+              ref = {input => {this.nameInput = input;}}//is used to set focus in componentDidMount method
             />
 
             <button className="btn" id="broadcast">
