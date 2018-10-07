@@ -136,7 +136,12 @@ class Messages extends Component {
           : `${date} ${month}`;
 
     //assigns class in case message and day are shown over msg
-    message.dateClasses = (message.showDayMonth !== "" && this.state.messages.length === 0) ? 'dayMonth firstdayMonth' : (message.showDayMonth !== "") ? 'dayMonth' : '';
+    message.dateClasses =
+      message.showDayMonth !== "" && this.state.messages.length === 0
+        ? "dayMonth firstdayMonth clearfix"
+        : message.showDayMonth !== ""
+          ? "dayMonth clearfix"
+          : "";
 
     const array = this.state.messages;
     // adds new msg to array of previous msgs
