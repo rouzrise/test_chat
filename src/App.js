@@ -49,8 +49,8 @@ class App extends Component {
       localStorage.setItem("name", this.state.name);
 
       //redirects browser to another page after user submits data
-      // window.location.href = "https://rouzrise.github.io/test_chat/#/chat";
-      window.location.href = "http://localhost:3000/#/chat";
+      window.location.href = "https://rouzrise.github.io/test_chat/#/chat";
+      // window.location.href = "http://localhost:3000/#/chat";
     }
   }
 
