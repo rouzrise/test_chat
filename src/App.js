@@ -14,14 +14,16 @@ class App extends Component {
 
   state = {
     name: "",
-    signInRef: "regular"
+    signInRef: "regular",
+    signInBorder: ""
   };
 
   //handles input of userName
   handleChange(e) {
     this.setState({
       name: e.target.value,
-      signInRef: "regular"
+      signInRef: "regular",
+      signInBorder: ""
     });
   }
 
@@ -33,12 +35,14 @@ class App extends Component {
     //checks if there is an empty input of name - prevents
     if (name.trim() === "") {
       this.setState({
-        signInRef: "attention"
+        signInRef: "attention",
+        signInBorder: "redBottom"
       });
       return;
     } else {
       this.setState({
-        signInRef: "regular"
+        signInRef: "regular",
+        signInBorder: ""
       });
       //keeps name input by user in local storage
       localStorage.setItem("name", this.state.name);
@@ -63,6 +67,7 @@ class App extends Component {
                 handleChange={this.handleChange}
                 name={this.state.name}
                 signInRef={this.state.signInRef}
+                signInBorder={this.state.signInBorder}
               />
             )}
           />

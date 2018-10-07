@@ -189,6 +189,7 @@ body {
 .attention {
   color: #ff0000;
 }
+
 .messagesSign {
   z-index: 1000;
 }
@@ -222,6 +223,9 @@ input[type="text"]:focus {
   border-bottom: solid 2px var(--main-bg-color);
 }
 
+#userName.redBottom {
+  border-bottom: solid 2px #ff0000;
+}
 button {
   border: none;
   font-size: 13px;

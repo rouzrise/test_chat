@@ -19,6 +19,7 @@ class SignIn extends Component {
               value={this.props.name}
               type="text"
               id="userName"
+              className={this.props.signInBorder}
             />
             <label>Password</label>
             <input
