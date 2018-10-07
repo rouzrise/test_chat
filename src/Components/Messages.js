@@ -181,9 +181,9 @@ class Messages extends Component {
       return messages.map(message => {
         const classNames = `${this.state.alignMessages} message clearfix`;
         return (
-          <div>
+          <div key={message.key}>
             <div className={message.dateClasses}>{message.showDayMonth}</div>
-            <div className={classNames} key={message.key}>
+            <div className={classNames}>
               <div className="text">{message.text}</div>
               <div className="msgAttrs">
                 <span className="name">{message.name}</span>{" "}
