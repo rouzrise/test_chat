@@ -74,6 +74,8 @@ class Messages extends Component {
     this.setState({
       message: ""
     });
+    //keeps input focused after submitting msg
+    this.nameInput.focus();
   }
 
   //handles sending messages
