@@ -228,6 +228,7 @@ class Messages extends Component {
               value={this.state.message}
               type="text"
               id="sendField"
+              autocomplete="off"
               ref = {input => {this.nameInput = input;}}//is used to set focus in componentDidMount method
             />
 
