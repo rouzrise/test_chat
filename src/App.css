@@ -405,11 +405,15 @@ header {
   width: 375px;
 }
 
-.btn {
+#broadcast {
   position: absolute;
   bottom: 0;
   margin-bottom: -33px;
   right: 16px;
   z-index: 1000;
   background: none;
+}
+
+button.no-focus-outline:focus {
+  outline: none;
 }

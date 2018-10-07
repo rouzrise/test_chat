@@ -17,7 +17,7 @@ class App extends Component {
     signInRef: "regular",
     signInBorder: ""
   };
-  
+
   //handles input of userName
   handleChange(e) {
     this.setState({
@@ -38,7 +38,7 @@ class App extends Component {
         signInRef: "attention",
         signInBorder: "redBottom"
       });
-      document.getElementById('userName').focus();//sets focus to input field wz id="userName"
+      document.getElementById("userName").focus(); //sets focus to input field wz id="userName"
       return;
     } else {
       this.setState({
@@ -49,8 +49,8 @@ class App extends Component {
       localStorage.setItem("name", this.state.name);
 
       //redirects browser to another page after user submits data
-      // window.location.href = "https://rouzrise.github.io/test_chat/#/chat";
-      window.location.href = "http://localhost:3000/#/chat";
+      window.location.href = "https://rouzrise.github.io/test_chat/#/chat";
+      // window.location.href = "http://localhost:3000/#/chat";
     }
   }
 

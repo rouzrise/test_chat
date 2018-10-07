@@ -5,6 +5,7 @@ import uuid from "uuid";
 class Messages extends Component {
   constructor() {
     super();
+    this.handleKeyUp = this.handleKeyUp.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
@@ -16,13 +17,13 @@ class Messages extends Component {
     message: "",
     messages: [],
     //TO BE DONE - not used now - is created for later differentiation of msgs sent by user and his interlocutor - it should be changed by function (create later) that changes state to '' if message is sent by users interlocuter, not user himself to be reflected on another side of screen
-    alignMessages: "float-right",
+    alignMessages: "float-right", //to be considered - as soon as it should be stored in msgs of particular user so that msgs could be reflected on different sides (not to be kept in state!!!)
+    focusOutline: "no-focus-outline", //for submit msgs button
     time: ""
   };
 
   //before mounting component
   componentDidMount() {
-
     //sets focus to input field (with  id="userName") when component is rendered
     this.nameInput.focus();
 
@@ -46,6 +47,15 @@ class Messages extends Component {
   //invokes function to scroll msgs; if putting into componentDidMount() - scrolling is not full ('last msg not scrolled')
   componentDidUpdate() {
     this.scrollToBottom();
+  }
+
+  //returns focus ring around submit msgs button if tab key is used
+  handleKeyUp(e) {
+    if (e.keyCode === 9) {
+      this.setState({
+        focusOutline: ""
+      });
+    }
   }
 
   // handles input of messages
@@ -136,7 +146,7 @@ class Messages extends Component {
         ? `${date} ${month}`
         : message.dayMonth ===
           this.state.messages[this.state.messages.length - 1].dayMonth
-          ? ''
+          ? ""
           : `${date} ${month}`;
 
     //assigns class in case message and day are shown over msg
@@ -229,10 +239,16 @@ class Messages extends Component {
               type="text"
               id="sendField"
               autoComplete="off"
-              ref = {input => {this.nameInput = input;}}//is used to set focus in componentDidMount method
+              ref={input => {
+                this.nameInput = input;
+              }} //is used to set focus in componentDidMount method
             />
 
-            <button className="btn" id="broadcast">
+            <button
+              className={this.state.focusOutline}
+              id="broadcast"
+              onKeyUp={this.handleKeyUp}
+            >
               <img src={buttonSend} alt="Send" />
             </button>
           </div>
