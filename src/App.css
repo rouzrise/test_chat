@@ -334,6 +334,7 @@ header {
 }
 
 .message {
+  position: relative;
   padding: 24px;
   margin: 14px 25px 25px 0;
   background-color: #fff;
@@ -358,6 +359,13 @@ header {
   float: right;
 }
 
+.closeMsg{
+  height: 12px;
+  position: absolute;
+  top: 14px;
+  right: 10px;
+
+}
 .otherUserMessage {
   float: right;
 }

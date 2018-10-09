@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import buttonSend from "./../vectors/buttonSend.png";
 import uuid from "uuid";
+import closeMsg from "./../vectors/closeMsg.svg";
 
 class Messages extends Component {
   constructor() {
@@ -11,6 +12,8 @@ class Messages extends Component {
     this.sendMessage = this.sendMessage.bind(this);
     this.renderMessages = this.renderMessages.bind(this);
     this.scrollToBottom = this.scrollToBottom.bind(this);
+    // this.onClickMessages = this.onClickMessages.bind(this);
+    this.removeMsg = this.removeMsg.bind(this);
   }
 
   state = {
@@ -185,6 +188,24 @@ class Messages extends Component {
     return time;
   }
 
+  //   onClickMessages() {
+  // TO BE DONE
+  //   }
+
+  //handles message removing after close click
+  removeMsg(message) {
+    this.setState(state => ({
+      messages: state.messages.filter(c => c.key !== message.key)
+    }));
+    //use auxiliary variable (auxVar) - can't use this.state.messages unstead - because it is this.setState is asynchronous - and happens AFTER operations over localStorage :(((
+    let auxVar = this.state.messages.filter(c => c.key !== message.key); //auxiliary variable to keep all the messages except for the one to be deleted
+    localStorage.removeItem("messages"); //remove old local storage content
+    localStorage.setItem("messages", JSON.stringify(auxVar)); //populate local storage wz new conternt (without deleted message)
+    this.renderMessages();
+    //keeps input focused
+    this.nameInput.focus();
+  }
+
   // handles messages rendering
   renderMessages() {
     // checks if there are no msgs in local storage
@@ -199,9 +220,15 @@ class Messages extends Component {
         return (
           <div key={message.key}>
             <div className={message.dateClasses}>{message.showDayMonth}</div>
-            <div className={classNames}>
+            <div className={classNames} id="message">
               <div className="text">{message.text}</div>
               <div className="msgAttrs">
+                <img
+                  src={closeMsg}
+                  className="closeMsg"
+                  alt="close message"
+                  onClick={() => this.removeMsg(message)}
+                />
                 <span className="name">{message.name}</span>{" "}
                 <span className="time">{message.time}</span>
               </div>
