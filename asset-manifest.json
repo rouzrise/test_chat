@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.853d5f7c.css",
-  "main.css.map": "static/css/main.853d5f7c.css.map",
-  "main.js": "static/js/main.0482abbc.js",
-  "main.js.map": "static/js/main.0482abbc.js.map",
+  "main.css": "static/css/main.4873eca1.css",
+  "main.css.map": "static/css/main.4873eca1.css.map",
+  "main.js": "static/js/main.afe64b7b.js",
+  "main.js.map": "static/js/main.afe64b7b.js.map",
   "static/media/closeMsg.svg": "static/media/closeMsg.91503f1c.svg",
   "static/media/karla-bold-webfont.woff": "static/media/karla-bold-webfont.59690109.woff",
   "static/media/karla-bold-webfont.woff2": "static/media/karla-bold-webfont.28948030.woff2",
@@ -11,6 +11,5 @@
   "static/media/karla-italic-webfont.woff": "static/media/karla-italic-webfont.089b70e4.woff",
   "static/media/karla-italic-webfont.woff2": "static/media/karla-italic-webfont.19e02cd4.woff2",
   "static/media/karla-regular-webfont.woff": "static/media/karla-regular-webfont.4aef8aaf.woff",
-  "static/media/karla-regular-webfont.woff2": "static/media/karla-regular-webfont.584e7756.woff2",
-  "static/media/msgs.svg": "static/media/msgs.4b1f383d.svg"
+  "static/media/karla-regular-webfont.woff2": "static/media/karla-regular-webfont.584e7756.woff2"
 }
