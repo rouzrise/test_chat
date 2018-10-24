@@ -20,8 +20,8 @@ class Messages extends Component {
     message: "",
     messages: [],
     //TO BE DONE - not used now - is created for later differentiation of msgs sent by user and his interlocutor - it should be changed by function (create later) that changes state to '' if message is sent by users interlocuter, not user himself to be reflected on another side of screen
-    alignMessages: "float-right", //to be considered - as soon as it should be stored in msgs of particular user so that msgs could be reflected on different sides (not to be kept in state!!!)
-    focusOutline: "no-focus-outline", //for submit msgs button
+    alignMessages: "chatArea__msgBlockContainer_owner clearfix", //to be considered - as soon as it should be stored in msgs of particular user so that msgs could be reflected on different sides (not to be kept in state!!!)
+    focusOutline: "screen__sendButton screen__sendButton_noFocus", //for submit msgs button
     time: ""
   };
 
@@ -56,7 +56,7 @@ class Messages extends Component {
   handleKeyUp(e) {
     if (e.keyCode === 9) {
       this.setState({
-        focusOutline: ""
+        focusOutline: "screen__sendButton"
       });
     }
   }
@@ -157,9 +157,9 @@ class Messages extends Component {
     //assigns class in case message and day are shown over msg
     message.dateClasses =
       message.showDayMonth !== "" && this.state.messages.length === 0
-        ? "dayMonth firstdayMonth clearfix"
+        ? "chatArea__data chatArea__data_firstData clearfix"
         : message.showDayMonth !== ""
-          ? "dayMonth clearfix"
+          ? "chatArea__data clearfix"
           : "";
 
     const array = this.state.messages;
@@ -216,21 +216,25 @@ class Messages extends Component {
       const messages = JSON.parse(localStorage.getItem("messages"));
 
       return messages.map(message => {
-        const classNames = `${this.state.alignMessages} message clearfix`;
+        const classNames = `${
+          this.state.alignMessages
+        } chatArea__msgBlockContainer`;
         return (
-          <div key={message.key}>
+          <div key={message.key} className="elContainer">
             <div className={message.dateClasses}>{message.showDayMonth}</div>
-            <div className={classNames} id="message">
-              <div className="text">{message.text}</div>
-              <div className="msgAttrs">
-                <img
-                  src={closeMsg}
-                  className="closeMsg"
-                  alt="close message"
-                  onClick={() => this.removeMsg(message)}
-                />
-                <span className="name">{message.name}</span>{" "}
-                <span className="time">{message.time}</span>
+            <div className={classNames}>
+              <div className="msgBlock" id="message">
+                <div className="msgBlock__text">{message.text}</div>
+                <div className="msgBlock__attrs attrs">
+                  <img
+                    src={closeMsg}
+                    className="attrs__close"
+                    alt="close message"
+                    onClick={() => this.removeMsg(message)}
+                  />
+                  <span className="attrs__name">{message.name}</span>{" "}
+                  <span className="attrs__time">{message.time}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -242,16 +246,14 @@ class Messages extends Component {
   // handles scrolling of msgs
   scrollToBottom() {
     this.endMsg.scrollIntoView({ behavior: "instant" });
+    console.log("yeah");
   }
 
   render() {
     return (
-      <div className="messages">
-        <div className="chatArea">
-          {/* <div className="dayTime">
-            Today at {new Date().getHours()}:{new Date().getMinutes()}
-          </div> */}
-          <div className="message-list">{this.renderMessages()}</div>
+      <div className="elContainer">
+        <div className="screen__chatArea chatArea">
+          <div>{this.renderMessages()}</div>
           <div
             style={{ float: "left", clear: "both" }} // elem to be point to scroll to bottom
             ref={el => {
@@ -259,28 +261,30 @@ class Messages extends Component {
             }}
           />
         </div>
-        <form onSubmit={this.handleSubmit} className="send-message-form">
-          <div id="inputContainer">
-            <input
-              onChange={this.handleChange}
-              placeholder="Type message..."
-              value={this.state.message}
-              type="text"
-              id="sendField"
-              autoComplete="off"
-              ref={input => {
-                this.nameInput = input;
-              }} //is used to set focus in componentDidMount method
-            />
+        <form
+          onSubmit={this.handleSubmit}
+          className="screen__msgInputForm msgInputForm"
+        >
+          <input
+            className="msgInputForm__sendField"
+            onChange={this.handleChange}
+            placeholder="Type message..."
+            value={this.state.message}
+            type="text"
+            id="sendField"
+            autoComplete="off"
+            ref={input => {
+              this.nameInput = input;
+            }} //is used to set focus in componentDidMount method
+          />
 
-            <button
-              className={this.state.focusOutline}
-              id="broadcast"
-              onKeyUp={this.handleKeyUp}
-            >
-              <img src={buttonSend} alt="Send" />
-            </button>
-          </div>
+          <button
+            className={this.state.focusOutline}
+            id="broadcast"
+            onKeyUp={this.handleKeyUp}
+          >
+            <img src={buttonSend} alt="Send" />
+          </button>
         </form>
       </div>
     );

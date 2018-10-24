@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import msgs from "./../vectors/msgs.svg";
+import msgs from "./../vectors/msgs.png";
 
 class SignIn extends Component {
   componentDidMount() {
@@ -10,45 +10,54 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div className="signInPage">
-        <h1 className="chatName">Chat</h1>
-        <img src={msgs} className="messagesSign" alt="messages sign" />
-
+      <div className="fullScr">
+        <div className="fullScr__firstBgBlock" />
+        <div className="fullScr__secondBgBlock" />
+        <div className="fullScr__appName">Chat</div>
+        <img
+          src={msgs}
+          alt="Chat decorative icon"
+          className="fullScr__chatIcon"
+        />
         {/* login form */}
-        <form onSubmit={this.props.handleSubmit} className="sign-in">
-          <fieldset>
-            <label className={this.props.signInRef}>Username</label>
-            <input
-              onChange={this.props.handleChange}
-              placeholder="Enter Your Name"
-              value={this.props.name}
-              type="text"
-              id="userName"
-              className={this.props.signInBorder}
-              ref = {input => {this.nameInput = input;}}//is used to set focus in componentDidMount method
-            />
-            <label>Password</label>
-            <input
-              type="text"
-              id="password"
-              name="password"
-              placeholder="Enter Your Password"
-            />
+        <div className="fullScr__loginFormWrapper">
+          <form className="loginForm" onSubmit={this.props.handleSubmit}>
+            <fieldset>
+              <label className={this.props.signInRef}>Username</label>
+              <input
+                className={this.props.signInBorder}
+                placeholder="Enter Your Name"
+                type="text"
+                id="userName"
+                onChange={this.props.handleChange}
+                value={this.props.name}
+                // required //made other way
+                ref={input => {
+                  this.nameInput = input;
+                }} //is used to set focus in componentDidMount method
+              />
 
-            <button type="submit" className="right">
-              Get Started
-            </button>
-            <div className="blueStrip" />
-          </fieldset>
-        </form>
+              <label className="loginForm__label">Password</label>
+              <input
+                className="loginForm__input"
+                type="text"
+                id="password"
+                name="password"
+                placeholder="Enter Your Password"
+              />
 
-        <div className="blackBg" />
+              <button className="loginForm__submit" type="submit">
+                        Get Started
+                  </button>
+                  <div className="loginForm__submitBg"></div>
+            </fieldset>
+          </form>
+        </div>
 
-        <div className="footerText">
-          <span>Not registered? </span>
-          <a className="linkToSignUp" href="">
-            Create Account
-          </a>
+        <div className="fullScr__footerTextWrapper">
+            <div className="footerText">
+                <span>Not registered?</span> <a className="footerText__link" href="">Create Account</a>
+            </div>
         </div>
       </div>
     );

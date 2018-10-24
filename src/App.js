@@ -14,16 +14,16 @@ class App extends Component {
 
   state = {
     name: "",
-    signInRef: "regular",
-    signInBorder: ""
+    signInRef: "loginForm__label",
+    signInBorder: "loginForm__input"
   };
 
   //handles input of userName
   handleChange(e) {
     this.setState({
       name: e.target.value,
-      signInRef: "regular",
-      signInBorder: ""
+      signInRef: "loginForm__label",
+      signInBorder: "loginForm__input"
     });
   }
 
@@ -35,15 +35,15 @@ class App extends Component {
     //checks if there is an empty input of name - prevents
     if (name.trim() === "") {
       this.setState({
-        signInRef: "attention",
-        signInBorder: "redBottom"
+        signInRef: "loginForm__label loginForm__label_alarm",
+        signInBorder: "loginForm__input loginForm__input_alarm"
       });
       document.getElementById("userName").focus(); //sets focus to input field wz id="userName"
       return;
     } else {
       this.setState({
-        signInRef: "regular",
-        signInBorder: ""
+        signInRef: "loginForm__label",
+        signInBorder: "loginForm__input"
       });
       //keeps name input by user in local storage
       localStorage.setItem("name", this.state.name);
@@ -77,9 +77,9 @@ class App extends Component {
             exact
             path="/chat"
             render={() => (
-              <div>
-                <header>
-                  <span className="headingChat">Testovoe zadanie</span>
+              <div className="screen">
+                <header className="screen__header">
+                  <span>Test Assignment</span>
                 </header>
                 <Messages name={this.state.name} />
               </div>
