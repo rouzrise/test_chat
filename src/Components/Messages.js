@@ -251,7 +251,10 @@ class Messages extends Component {
 
   render() {
     return (
-      <div className="elContainer">
+      <div className="screen">
+        <header className="screen__header">
+          <span>Test Assignment</span>
+        </header>
         <div className="screen__chatArea chatArea">
           <div>{this.renderMessages()}</div>
           <div

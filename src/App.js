@@ -77,10 +77,7 @@ class App extends Component {
             exact
             path="/chat"
             render={() => (
-              <div className="screen">
-                <header className="screen__header">
-                  <span>Test Assignment</span>
-                </header>
+              <div className="container">
                 <Messages name={this.state.name} />
               </div>
             )}

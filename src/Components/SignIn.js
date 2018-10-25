@@ -47,17 +47,20 @@ class SignIn extends Component {
               />
 
               <button className="loginForm__submit" type="submit">
-                        Get Started
-                  </button>
-                  <div className="loginForm__submitBg"></div>
+                Get Started
+              </button>
+              <div className="loginForm__submitBg" />
             </fieldset>
           </form>
         </div>
 
         <div className="fullScr__footerTextWrapper">
-            <div className="footerText">
-                <span>Not registered?</span> <a className="footerText__link" href="">Create Account</a>
-            </div>
+          <div className="footerText">
+            <span>Not registered?</span>{" "}
+            <a className="footerText__link" href="">
+              Create Account
+            </a>
+          </div>
         </div>
       </div>
     );
